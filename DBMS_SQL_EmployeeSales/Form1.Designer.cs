@@ -44,6 +44,7 @@
             dgvEmployee.Location = new Point(28, 39);
             dgvEmployee.Name = "dgvEmployee";
             dgvEmployee.ReadOnly = true;
+            dgvEmployee.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvEmployee.Size = new Size(750, 282);
             dgvEmployee.TabIndex = 0;
             dgvEmployee.CellMouseUp += dgvEmployee_CellMouseUp;

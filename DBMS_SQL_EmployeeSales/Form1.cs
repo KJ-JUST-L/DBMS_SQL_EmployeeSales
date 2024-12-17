@@ -48,12 +48,12 @@ namespace DBMS_SQL_EmployeeSales {
             {
                 int id = Convert.ToInt32(dgvEmployee.CurrentRow.Cells[0].Value);
                 //MessageBox.Show(id.ToString(), "รหัสที่เลือก");
-                string sqlQuery = "SELECT OrderID, OrderDate, ShippedDate, ProductID, Quantity, UnitPrice, TotalPrice FROM OrderListByEmployee WHERE EmployeeID = @id ORDER BY orderID ASC";
+                string sqlQuery = "SELECT OrderID, CustomerID, OrderDate, RequiredDate, ShippedDate, ShipVia, Freight, ShipName, ShipAddress, ShipCity, ShipRegion, ShipPostalCode, ShipCountry FROM OrderListByEmployee WHERE EmployeeID = @id ORDER BY orderID ASC";
                 cmd = new SqlCommand(sqlQuery, conn);
                 cmd.Parameters.AddWithValue("@id", id);
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 DataSet ds = new DataSet();
-                da.Fill(ds);
+                    da.Fill(ds);
                 dgvOrderList.DataSource = ds.Tables[0];
             }
         }
